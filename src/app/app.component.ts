@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'assessment';
+
+  routerOutletComponent!: any;
+
+  onActivate(value: string) {
+    //this.color = value;
+    this.routerOutletComponent = value;
+  }
 }

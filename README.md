@@ -1,6 +1,11 @@
 # Assessment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+## Kulanılan Teknoloji ve Araçlar
+
+* ngrx
+* rxjs
+* json-server
 
 ## Development server
 

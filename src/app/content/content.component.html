@@ -1,0 +1,57 @@
+<div>
+  <aside>
+    <a class="color red" (click)="changeColor('red')">Red</a>
+    <a class="color purple" (click)="changeColor('purple')">Purple</a>
+    <a class="color fuchsia" (click)="changeColor('fuchsia')">Fuchsia</a>
+    <a class="color olive" (click)="changeColor('olive')">Olive</a>
+    <a class="color teal" (click)="changeColor('teal')">Teal</a>
+    <a class="color blueviolet" (click)="changeColor('blueviolet')">Blueviolet</a>
+    <a class="color chocolate" (click)="changeColor('chocolate')">Chocolate</a>
+    <a class="color sandybrown" (click)="changeColor('sandybrown')">Sandybrown</a>
+  </aside>
+
+  <form [formGroup]="registerForm">
+    <h2>Register Form</h2>
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." formControlName="firstName" required>
+
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." formControlName="lastName" required>
+
+    <label for="lname">Email</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email adress.." formControlName="email" required>
+    <span *ngIf="registerForm.get('email')?.hasError('email')">
+      <span style="color: red;">Please enter the email in the correct format</span>
+      <br>
+    </span>
+
+    <label for="lname">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password.." formControlName="password" required>
+    <span *ngIf="registerForm.get('password')?.hasError('minlength')" style="margin-bottom: 15px;">
+      <span style="color: red;">Password must be minimum 8 characters</span>
+      <br>
+    </span>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" formControlName="country">
+      <option value="turkiye">Turkiye</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+    <span *ngIf="registerForm.get('country')?.hasError('required')" style="margin-bottom: 15px;">
+      <span style="color: red;">Country is required</span>
+    </span>
+
+    <div class="formBtn">
+      <button class="resetBtn" ngClass="{{color$ | async}}" [disabled]="registerForm.invalid" (click)="reset()">
+        Reset
+      </button>
+      <button class="submitBtn" type="submit" [disabled]="registerForm.invalid" ngClass="{{color$ | async}}" routerLink="/two" (click)="createAccount()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

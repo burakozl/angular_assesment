@@ -1,0 +1,4 @@
+<header ngClass="{{color | async}}">
+  <h1>My App</h1>
+  <button (click)="logout()">{{userService.user !== undefined ? 'Logout' : 'Login'}}</button>
+</header>

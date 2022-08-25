@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="insedeContainer">
+    <aside>
+      <a class="color red" (click)="changeColor('red')">Red</a>
+      <a class="color purple" (click)="changeColor('purple')">Purple</a>
+      <a class="color fuchsia" (click)="changeColor('fuchsia')">Fuchsia</a>
+      <a class="color olive" (click)="changeColor('olive')">Olive</a>
+      <a class="color teal" (click)="changeColor('teal')">Teal</a>
+      <a class="color blueviolet" (click)="changeColor('blueviolet')">Blueviolet</a>
+      <a class="color chocolate" (click)="changeColor('chocolate')">Chocolate</a>
+      <a class="color sandybrown" (click)="changeColor('sandybrown')">Sandybrown</a>
+    </aside>
+
+    <form [formGroup]="loginForm">
+      <h2>Login Form</h2>
+
+      <label for="lname">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email adress.." formControlName="email" required>
+      <span *ngIf="loginForm.get('email')?.hasError('email')">
+        <span style="color: red;">Please enter the email in the correct format</span>
+        <br>
+      </span>
+
+      <label for="lname">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password.." formControlName="password" required>
+      <span *ngIf="loginForm.get('password')?.hasError('minlength')" style="margin-bottom: 15px;">
+        <span style="color: red;">Password must be minimum 8 characters</span>
+        <br>
+      </span>
+
+      <div class="formBtn">
+        <button class="resetBtn" ngClass="{{color$ | async}}" [disabled]="loginForm.invalid" (click)="reset()">
+          Reset
+        </button>
+        <button class="submitBtn" type="submit" ngClass="{{color$ | async}}" (click)="login()">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

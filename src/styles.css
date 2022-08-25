@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  display: block;
+  margin: 0;
+}
+.red{
+  background-color: red !important;
+}
+.purple{
+  background-color: purple !important;
+}
+.fuchsia{
+  background-color: fuchsia !important;
+}
+.olive{
+  background-color: olive !important;
+}
+.teal{
+  background-color: teal !important;
+}
+.blueviolet{
+  background-color: blueviolet !important;
+}
+.chocolate{
+  background-color: chocolate !important;
+}
+.sandybrown{
+  background-color: sandybrown !important;
+}

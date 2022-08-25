@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "firstName": "Burak",
+      "lastName": "Özel",
+      "email": "burakk.oozel@gmail.com",
+      "password": "11111111",
+      "country": "turkiye",
+      "id": 1
+    },
+    {
+      "firstName": "sasd",
+      "lastName": "dasd",
+      "email": "ad@a.com",
+      "password": "22222222",
+      "country": "canada",
+      "id": 2
+    }
+  ]
+}
